@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("d2-rng-sim.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76cf2fa2283e3604b2d4bfc201ac6d63040fb1ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b398ef8f571210d58fa6151629f48bbe64a7adee")]
 [assembly: System.Reflection.AssemblyProductAttribute("d2-rng-sim.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("d2-rng-sim.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
