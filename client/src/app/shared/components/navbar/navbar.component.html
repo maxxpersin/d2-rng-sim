@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Destiny 2 RNG</a>
+    <form class="d-flex" [formGroup]="itemSearchForm" (submit)="search()">
+      <input
+        class="form-control me-2"
+        type="search"
+        formControlName="itemName"
+        placeholder="Search an item for RNG"
+      />
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
