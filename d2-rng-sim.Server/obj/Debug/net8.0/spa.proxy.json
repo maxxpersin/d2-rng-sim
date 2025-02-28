@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:6847",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\dev\\d2-rng-sim\\d2-rng-sim.Server\\..\\d2-rng-sim.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
