@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiRoutes } from '../../shared/enums';
+import { ApiRoutes } from '../../../shared/enums';
 
 @Injectable({
   providedIn: 'root',

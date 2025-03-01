@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SearchService } from '../../../core/services/search.service';
+import { SearchService } from '../../../core/services/search/search.service';
 
 @Component({
   selector: 'app-navbar',
