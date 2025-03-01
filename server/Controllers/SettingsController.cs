@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using server.Models;
 using server.Services.BungieService;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace server.Controllers
         }
 
         [HttpGet("routecheck")]
-        public async Task<ActionResult> RouteCheck()
+        public async Task<ActionResult<List<Application>>> RouteCheck()
         {
             try
             {
