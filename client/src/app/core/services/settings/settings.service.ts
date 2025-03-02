@@ -13,4 +13,8 @@ export class SettingsService {
   public routeCheck(): Observable<any> {
     return this._http.get<any>(`${this._settingsApiRoute}/routecheck`);
   }
+
+  public getManifest(): Observable<any> {
+    return this._http.get<any>(`${this._settingsApiRoute}/manifest`);
+  }
 }

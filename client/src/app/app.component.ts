@@ -14,10 +14,17 @@ export class AppComponent {
 
   constructor(private _settingsService: SettingsService) {
     this._routeCheck();
+    this._getManifest();
   }
 
   private _routeCheck(): void {
     this._settingsService.routeCheck().subscribe((res) => {
+      console.log(res);
+    });
+  }
+
+  private _getManifest(): void {
+    this._settingsService.getManifest().subscribe((res) => {
       console.log(res);
     });
   }

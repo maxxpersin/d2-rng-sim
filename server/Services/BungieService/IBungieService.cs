@@ -6,5 +6,6 @@ namespace server.Services.BungieService
     public interface IBungieService
     {
         public Task<List<Application>> RouteCheck();
+        public Task<DestinyManifest> GetManifest();
     }
 }

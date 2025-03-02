@@ -27,5 +27,18 @@ namespace server.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("manifest")]
+        public async Task<ActionResult<Dictionary<string, string>>> GetManifest()
+        {
+            try
+            {
+                return Ok(await _bungieService.GetManifest());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

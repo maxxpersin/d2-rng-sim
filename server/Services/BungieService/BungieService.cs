@@ -33,5 +33,15 @@ namespace server.Services.BungieService
             var result = JsonSerializer.Deserialize<BungieApiResponse<List<Application>>>(responseBody);
             return result.Response;
         }
+
+        public async Task<DestinyManifest> GetManifest()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{BungieApiUrl}/destiny2/manifest");
+            var response = await _httpClient.SendAsync(request);
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<BungieApiResponse<DestinyManifest>>(responseBody);
+            return result.Response;
+        }
     }
 }
