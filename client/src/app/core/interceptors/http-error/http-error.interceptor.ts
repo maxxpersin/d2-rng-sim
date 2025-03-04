@@ -11,7 +11,6 @@ export const httpErrorInterceptor: HttpInterceptorFn = (req, next) => {
   const toastService = inject(ToastrService);
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      console.log(error);
       if (error.status > 299) {
         toastService.error(error.statusText, error.status.toString());
       }
