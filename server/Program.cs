@@ -29,4 +29,6 @@ app.MapControllers();
 app.UsePathBase(new PathString("/api/v1"));
 app.UseRouting();
 
+app.UseStaticFiles();
+
 app.Run();
