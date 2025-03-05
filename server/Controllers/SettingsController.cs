@@ -17,28 +17,14 @@ namespace server.Controllers
 
         [HttpGet("routecheck")]
         public async Task<ActionResult<List<Application>>> RouteCheck()
-        {
-            try
-            {
-                return Ok(await _bungieService.RouteCheck());
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+        { 
+            return Ok(await _bungieService.RouteCheck());
         }
 
         [HttpGet("manifest")]
         public async Task<ActionResult<Dictionary<string, string>>> GetManifest()
         {
-            try
-            {
-                return Ok(await _bungieService.GetManifest());
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return Ok(await _bungieService.GetManifest());
         }
     }
 }

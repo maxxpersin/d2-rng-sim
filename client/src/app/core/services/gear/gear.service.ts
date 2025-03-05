@@ -6,12 +6,12 @@ import { ApiRoutes } from '../../../shared/enums';
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService {
+export class GearService {
+  private _gearApiRoute: string = `${ApiRoutes.api}/${ApiRoutes.gear}`;
+
   constructor(private _http: HttpClient) {}
 
   searchItem(itemName: string): Observable<any> {
-    return this._http.get<any>(
-      `${ApiRoutes.api}/${ApiRoutes.items}?itemName=${itemName}`
-    );
+    return this._http.get<any>(`${this._gearApiRoute}?itemName=${itemName}`);
   }
 }

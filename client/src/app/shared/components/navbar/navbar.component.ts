@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SearchService } from '../../../core/services/search/search.service';
+import { GearService } from '../../../core/services/gear/gear.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,10 +13,10 @@ export class NavbarComponent {
     itemName: new FormControl(''),
   });
 
-  constructor(private _searchService: SearchService) {}
+  constructor(private _gearService: GearService) {}
 
   search(): void {
-    this._searchService
+    this._gearService
       .searchItem(this.itemSearchForm.controls['itemName'].value)
       .subscribe((res) => {
         console.log(res);
