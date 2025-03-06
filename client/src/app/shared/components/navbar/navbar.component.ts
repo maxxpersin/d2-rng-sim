@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { Store } from '@ngrx/store';
+import * as actions from '../../../store/actions';
 import { GearService } from '../../../core/services/gear/gear.service';
-
 @Component({
   selector: 'app-navbar',
   imports: [ReactiveFormsModule],
@@ -10,16 +16,20 @@ import { GearService } from '../../../core/services/gear/gear.service';
 })
 export class NavbarComponent {
   itemSearchForm: FormGroup = new FormGroup({
-    itemName: new FormControl(''),
+    itemName: new FormControl('', Validators.required),
   });
 
-  constructor(private _gearService: GearService) {}
+  constructor(private _store: Store, private _gearService: GearService) {}
 
   search(): void {
+    if (this.itemSearchForm.invalid) {
+      return;
+    }
+
     this._gearService
       .searchItem(this.itemSearchForm.controls['itemName'].value)
       .subscribe((res) => {
-        console.log(res);
+        this._store.dispatch(actions.setCurrentItem({ item: res }));
       });
   }
 }

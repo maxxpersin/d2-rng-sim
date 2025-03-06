@@ -6,6 +6,8 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { httpErrorInterceptor } from './core/interceptors/http-error/http-error.interceptor';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,8 +16,10 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([httpErrorInterceptor])),
     provideAnimations(),
     provideToastr({
-      positionClass: 'toast-bottom',
-      preventDuplicates: true,
+        positionClass: 'toast-bottom',
+        preventDuplicates: true,
     }),
-  ],
+    provideStore(),
+    provideEffects()
+],
 };
