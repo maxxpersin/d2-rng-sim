@@ -425,3 +425,7 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# Bungie SQLite file
+server/SQLite/*
+server/content.db

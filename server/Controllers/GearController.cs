@@ -1,12 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using server.Services.BungieService;
+using server.Services.GearService;
 
 namespace server.Controllers
 {
-    public class GearController : Controller
+    [ApiController]
+    [Route("gear")]
+    public class GearController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly IGearService _gearService;
+        public GearController(IGearService gearService) 
+        { 
+            _gearService = gearService;
+        
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetGear([FromQuery] string itemName)
         {
-            return View();
+            return Ok(await _gearService.GetItem(itemName));
         }
     }
 }

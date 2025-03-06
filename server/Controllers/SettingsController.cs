@@ -20,11 +20,5 @@ namespace server.Controllers
         { 
             return Ok(await _bungieService.RouteCheck());
         }
-
-        [HttpGet("manifest")]
-        public async Task<ActionResult<Dictionary<string, string>>> GetManifest()
-        {
-            return Ok(await _bungieService.GetManifest());
-        }
     }
 }

@@ -5,7 +5,7 @@ namespace server.Services.BungieService
 {
     public interface IBungieService
     {
+        public Task SetupSQLiteFromBungie();
         public Task<List<Application>> RouteCheck();
-        public Task<DestinyManifest> GetManifest();
     }
 }

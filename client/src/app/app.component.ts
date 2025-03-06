@@ -18,24 +18,11 @@ export class AppComponent {
     private _router: Router
   ) {
     this._routeCheck();
-    this._getManifest();
   }
 
   private _routeCheck(): void {
     this._settingsService
       .routeCheck()
-      .pipe(
-        catchError(() => {
-          this._router.navigate(['/error']);
-          return [];
-        })
-      )
-      .subscribe(() => {});
-  }
-
-  private _getManifest(): void {
-    this._settingsService
-      .getManifest()
       .pipe(
         catchError(() => {
           this._router.navigate(['/error']);
