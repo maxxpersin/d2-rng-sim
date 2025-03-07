@@ -15,6 +15,12 @@ namespace server.Controllers
         
         }
 
+        [HttpGet("{index}/perks/{perkHash}")]
+        public async Task<ActionResult> GetPerks([FromRoute] long index, [FromRoute] long perkHash)
+        {
+            return Ok(await _gearService.GetPerks(perkHash));
+        }
+
         [HttpGet]
         public async Task<ActionResult> GetGear([FromQuery] string itemName)
         {

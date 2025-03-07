@@ -1,8 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 
-export const getCurrentItem = createAction('[Gear] Get Current Item');
+export const LoadGear = createAction('[Gear] Load Gear');
 
-export const setCurrentItem = createAction(
-  '[Gear] Set Current Item',
-  props<{ item: any }>()
+export const AddGear = createAction('[Gear] Add Gear', props<{ gear: any }>());
+
+export const RemoveGear = createAction(
+  '[Gear] Remove Gear',
+  props<{ gearId: number }>()
+);
+
+export const SetCurrentGear = createAction(
+  '[Gear] Set Current Gear',
+  props<{ gear: any }>()
 );

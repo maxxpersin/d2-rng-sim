@@ -6,8 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import * as actions from '../../../store/actions';
 import { GearService } from '../../../core/services/gear/gear.service';
+import { AddGear, SetCurrentGear } from '../../../store/actions/gear.actions';
 @Component({
   selector: 'app-navbar',
   imports: [ReactiveFormsModule],
@@ -29,7 +29,7 @@ export class NavbarComponent {
     this._gearService
       .searchItem(this.itemSearchForm.controls['itemName'].value)
       .subscribe((res) => {
-        this._store.dispatch(actions.setCurrentItem({ item: res }));
+        this._store.dispatch(AddGear({ gear: res }));
       });
   }
 }

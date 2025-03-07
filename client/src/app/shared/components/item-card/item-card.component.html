@@ -1,0 +1,15 @@
+@if (itemSignal()) {
+<div class="card">
+  <img
+    class="card-img-top"
+    [src]="'https://bungie.net' + itemSignal().screenshot"
+    alt="{{ itemSignal().displayProperties.name }} image"
+  />
+  <div class="card-body">
+    <h3 class="card-title">{{ itemSignal().displayProperties.name }}</h3>
+    <h4 class="card-subtitle">
+      {{ itemSignal().displayProperties.description }}
+    </h4>
+  </div>
+</div>
+}

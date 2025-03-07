@@ -1,3 +1,4 @@
+import { gearReducer } from './store/reducers/gear.reducer';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -16,10 +17,10 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([httpErrorInterceptor])),
     provideAnimations(),
     provideToastr({
-        positionClass: 'toast-bottom',
-        preventDuplicates: true,
+      positionClass: 'toast-bottom',
+      preventDuplicates: true,
     }),
-    provideStore(),
-    provideEffects()
-],
+    provideStore({ gear: gearReducer }),
+    provideEffects(),
+  ],
 };
